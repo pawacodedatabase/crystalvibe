@@ -352,7 +352,7 @@ const ProductDetail: React.FC = () => {
           <div className="mt-8 border-t pt-6">
             <h2 className="text-2xl  text-gray-800 text-center font-riss">About the Brand</h2>
             <p className="text-sm text-gray-800 mt-2 text-center">
-  LuxeByBukola specializes in stylish and high-quality bags and shoes. Our mission is to add elegance and sophistication to your wardrobe, all at affordable prices.
+  CrystalVibe specializes in luxurious oufits. Our mission is to add elegance and sophistication to your wardrobe, all at affordable prices.
 </p>
 
           </div>

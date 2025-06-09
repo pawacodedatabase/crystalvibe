@@ -22,7 +22,7 @@ export default function BusinessPopup() {
           <X size={18} />
         </button>
 
-        <img src={logo} alt="LuxeByBukola Logo" width={60} className="mx-auto mb-4" />
+        <img src={logo} alt=" Logo" width={60} className="mx-auto mb-4" />
 
         <h2 className="font-semibold text-xl text-black  mb-2">Explore & Learn</h2>
 
