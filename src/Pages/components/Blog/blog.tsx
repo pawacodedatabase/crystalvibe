@@ -64,7 +64,7 @@ const Blog: React.FC = () => {
             {blogs.map((blog) => (
               <div key={blog.id} className="border p-4 rounded bg-[#fff]">
                 <img src={logo} alt="" width={50} />
-                <h4 className="text-xl text-yellow-300 mt-3 font-bold flex gap-2">
+                <h4 className="text-xl text-black mt-3 font-bold flex gap-2">
                   <FaArrowAltCircleRight className="text-gray-400 mt-1" />
                   {blog.title}
                 </h4>
