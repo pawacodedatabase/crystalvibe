@@ -98,7 +98,7 @@ const Footer: React.FC = () => {
 
 
               <a
-                href="tel:+234"
+                href="tel:+2348131967623"
                 className="bg-gray-200 hover:bg-gray-300 p-3 rounded-full text-black text-lg transition"
               >
                 <FaPhone />
