@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex justify-center space-x-4">
               <a
-                href="https://tiktok.com/crystalvibeluxury"
+                href="https://www.tiktok.com/@crystalvibeluxe?_r=1&_d=e7dh7b8d97ldg9&sec_uid=MS4wLjABAAAA3A5NqJF3FbzQJwGP-vJ192yZhsBdmXMEkyOHw9E2geTVw9dw2CbHsBrXAFI-c85S&share_author_id=6824595848320549894&sharer_language=en&source=h5_m&u_code=dedgm3mljh3803&ug_btm=b6880,b5836&sec_user_id=MS4wLjABAAAAuL1w9uEZRF0EfyoLOi2ojHdq4H4kV9Q5hePcaOskCzjVB7F45RYdMkmGHxxQh85C&utm_source=copy&social_share_type=5&utm_campaign=client_share&utm_medium=ios&tt_from=copy&user_id=6872366736688169990&enable_checksum=1&share_link_id=84209114-23D5-4476-9668-0883A53B0C71&share_app_id=1233"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gray-200 hover:bg-gray-300 p-3 rounded-full text-black text-lg transition"
