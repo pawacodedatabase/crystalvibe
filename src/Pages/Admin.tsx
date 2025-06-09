@@ -83,10 +83,10 @@ export default function AdminPage() {
       colors: [],
     });
   };
-  const handleArrayInput = (value: string) => {
-    console.log("Input Value:", value); // Check the input value
-    return value.split(",").map((v) => v.trim()).filter((v) => v);
-  };
+  // const handleArrayInput = (value: string) => {
+  //   console.log("Input Value:", value); // Check the input value
+  //   return value.split(",").map((v) => v.trim()).filter((v) => v);
+  // };
 
 
 
@@ -155,11 +155,11 @@ export default function AdminPage() {
   <option value="">-- Select Category --</option>
   <option value="Bag">Bag</option>
   <option value="Shoe">Shoe</option>
-  <option value="Jewelry">Jewelry</option>
+  <option value="Clothes">Cloth</option>
 </select>
 
 
-<label htmlFor="">Sub Category (Optional) </label>
+{/* <label htmlFor="">Sub Category (Optional) </label>
         <input
           type="text"
           placeholder="Subcategories (comma separated)"
@@ -168,7 +168,7 @@ export default function AdminPage() {
             setForm({ ...form, subCategories: handleArrayInput(e.target.value) })
           }
           className="border p-2 w-full rounded"
-        />
+        /> */}
 
 <label htmlFor="">Product Description</label>
         <textarea
@@ -205,24 +205,24 @@ export default function AdminPage() {
           />
           <span>Is On Sale?</span>
         </label>
-        <input
+        {/* <input
           type="text"
           placeholder="Sizes (comma separated)"
           value={form.sizes?.join(", ") || ""}
           onChange={(e) => setForm({ ...form, sizes: handleArrayInput(e.target.value) })}
           className="border p-2 w-full rounded"
-        />
+        /> */}
 
 
 
 
-        <input
+        {/* <input
           type="text"
           placeholder="Colors (comma separated)"
           value={form.colors?.join(", ") || ""}
           onChange={(e) => setForm({ ...form, colors: handleArrayInput(e.target.value) })}
           className="border p-2 w-full rounded"
-        />
+        /> */}
 
         {/* IMAGES LIST */}
         <div>
