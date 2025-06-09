@@ -21,6 +21,7 @@ import Blog from './Pages/components/Blog/blog';
 import BlogDetail from './Pages/components/Blog/blogDetails';
 import LegSizeGuide from './Pages/components/guide';
 import LegalTerms from './Pages/components/LegalTerm';
+import PaymentPage from './Pages/products/paymentpage';
 
 
 // Importing pages
@@ -51,6 +52,7 @@ const App: React.FC = () => {
         <Route path="/blog" element={<Blog/>} />
         <Route path="/legal" element={<LegalTerms/>} />
         <Route path="/guide" element={<LegSizeGuide/>} />
+        <Route path="/payment" element={<PaymentPage/>} />
         <Route path="/blog/:id" element={<BlogDetail/>} />
         <Route path="/product/:id" element={<ProductDetail />} />
          </Routes>

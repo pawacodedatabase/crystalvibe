@@ -6,12 +6,6 @@ interface CartItem {
   quantity: number;
 }
 
-declare global {
-  interface Window {
-    PaystackPop?: any;
-  }
-}
-
 const deliveryFees = [
   { state: "West (W)", fee: 2500 },
   { state: "North (N)", fee: 3500 },
@@ -19,7 +13,6 @@ const deliveryFees = [
   { state: "South (S)", fee: 35500 },
 ];
 
-const ORDER_BIN_ID = "6826fbd28960c979a59a8f89";
 const API_KEY = "$2a$10$qrNF.b6EVU4HN2N8Dvegaez/mp2L7ZO9EjET5ujsIiWNSfuOyB.mu";
 
 const Checkout: React.FC = () => {
@@ -32,7 +25,6 @@ const Checkout: React.FC = () => {
     email: "",
     address: "",
     phone: "",
-    paymentMethod: "Paystack",
   });
 
   const navigate = useNavigate();
@@ -80,12 +72,7 @@ const Checkout: React.FC = () => {
     setBillingInfo((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handlePaystackPayment = async () => {
-    if (!window.PaystackPop) {
-      alert("Paystack SDK not loaded");
-      return;
-    }
-
+  const handleManualPayment = () => {
     if (!billingInfo.email || !billingInfo.name || !billingInfo.phone || !billingInfo.address) {
       alert("Please fill in all billing fields.");
       return;
@@ -101,7 +88,6 @@ const Checkout: React.FC = () => {
       return;
     }
 
-    const totalAmountKobo = Math.round((totalPrice + deliveryFee) * 100);
     const orderId = `ORD-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
 
     const orderedProducts = cart
@@ -128,53 +114,7 @@ const Checkout: React.FC = () => {
       billingInfo,
     };
 
-    window.PaystackPop.setup({
-      key: "pk_test_3c6c74e920aeec4baf4f0a74227352c934dcb2d0", // Replace with your live key in production
-      email: billingInfo.email,
-      amount: totalAmountKobo,
-      currency: "NGN",
-      ref: orderId,
-      onSuccess: async () => {
-        try {
-          const latestRes = await fetch(
-            `https://api.jsonbin.io/v3/b/${ORDER_BIN_ID}/latest`,
-            {
-              headers: { "X-Master-Key": API_KEY },
-            }
-          );
-          const latestData = await latestRes.json();
-          const existingInvoices = latestData.record?.invoices || [];
-
-          const updatedData = {
-            invoices: [...existingInvoices, order],
-          };
-
-          const saveRes = await fetch(`https://api.jsonbin.io/v3/b/${ORDER_BIN_ID}`, {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-              "X-Master-Key": API_KEY,
-              "X-Bin-Versioning": "false",
-            },
-            body: JSON.stringify(updatedData),
-          });
-
-          if (saveRes.ok) {
-            localStorage.removeItem("cart");
-            navigate("/confirmation", { state: { orderId } });
-          } else {
-            console.error("Failed to save order:", await saveRes.text());
-            alert("Failed to save order. Please contact support.");
-          }
-        } catch (err) {
-          console.error("Error during order save:", err);
-          alert("An error occurred during checkout.");
-        }
-      },
-      onCancel: () => {
-        alert("Payment canceled");
-      },
-    });
+    navigate("/payment", { state: { order } });
   };
 
   return (
@@ -274,10 +214,10 @@ const Checkout: React.FC = () => {
           </div>
 
           <button
-            onClick={handlePaystackPayment}
+            onClick={handleManualPayment}
             className="mt-6 w-full py-3 bg-[#1a2d42] text-white font-medium rounded hover:bg-white hover:text-[#1a2d42] hover:border hover:border-[#1a2d42]"
           >
-            Pay with Paystack
+            Proceed to Payment
           </button>
         </div>
       </div>
