@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaInstagram, FaEnvelope, FaWhatsapp, FaPhone, FaTiktok } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp, FaPhone, FaTiktok } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
