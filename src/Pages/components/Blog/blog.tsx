@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import logo from "../../../assets/logo.jpg";
+import logo from "../../../assets/logo.png";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 // import BlogBanner from "./blogBanner";
 
-const JSON_BIN_ID = "681c6b418960c979a5956f7d"; // Replace with your JSONBin bin ID
-const API_KEY = "$2a$10$qrNF.b6EVU4HN2N8Dvegaez/mp2L7ZO9EjET5ujsIiWNSfuOyB.mu"; // Replace with your JSONBin API Key
+const JSON_BIN_ID = "68468cf18561e97a50214a90";
+const API_KEY = "$2a$10$yti1izYQ7PKY9IhwxrQiuuIk8TZDdxM6nzYFnduMOvJtKIdyRhBB.";
 const BASE_URL = `https://api.jsonbin.io/v3/b/${JSON_BIN_ID}`;
 
 interface BlogPost {
@@ -62,22 +62,22 @@ const Blog: React.FC = () => {
           
           <div className="space-y-6">
             {blogs.map((blog) => (
-              <div key={blog.id} className="border p-4 rounded bg-[#000]">
+              <div key={blog.id} className="border p-4 rounded bg-[#fff]">
                 <img src={logo} alt="" width={50} />
                 <h4 className="text-xl text-yellow-300 mt-3 font-bold flex gap-2">
-                  <FaArrowAltCircleRight className="text-yellow-400 mt-1" />
+                  <FaArrowAltCircleRight className="text-gray-400 mt-1" />
                   {blog.title}
                 </h4>
-                <p className="text-sm text-gray-300 mt-3">
+                <p className="text-sm text-gray-500 mt-3">
                   {blog.content.slice(0, 150)}...{" "}
-                  <Link to={`/blog/${blog.id}`} className="font-bold text-yellow-300">
+                  <Link to={`/blog/${blog.id}`} className="font-bold underline text-blue-500">
                     Read More
                   </Link>
                 </p>
                 <div className="flex justify-between">
-                 <p className="text-xs mt-2 text-gray-300">
+                 <p className="text-xs mt-2 text-gray-500">
                 Author: <span className="font-bold">{blog.author || "Unknown"} </span>
-              </p> <p className="text-xs mt-2 text-gray-300">at {blog.date}</p>
+              </p> <p className="text-xs mt-2 text-gray-500">at {blog.date}</p>
               </div>
               </div>
             ))}
