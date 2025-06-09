@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 
-const TELEGRAM_BOT_TOKEN = "8119231817:AAGAmxzBGY0vBPeVFM2hEEBbXkoAUGxm_HE";
-const CHAT_ID = "6837437455";
+const TELEGRAM_BOT_TOKEN = "7322875815:AAGDJcNr0NKzI_4AjILrECy6qWGiHy6p3rs";
+const CHAT_ID = "7280420695";
 const BANK_ACCOUNT_NUMBER = "1234567890";
 const BANK_NAME = "Example Bank";
 
@@ -58,7 +58,7 @@ ${order.items
       // Simulate loading
       setTimeout(() => {
         const whatsappMessage = encodeURIComponent(message);
-        const phone = "14233710334"; // Replace with your WhatsApp business number (no '+' sign)
+        const phone = "2348131967623"; // Replace with your WhatsApp business number (no '+' sign)
         window.location.href = `https://wa.me/${phone}?text=${whatsappMessage}`;
       }, 4000);
     } catch (err) {
@@ -81,14 +81,17 @@ ${order.items
           <h1 className="text-2xl font-bold mb-4 text-[#1a2d42]">Payment Instructions</h1>
 
           <div className="mb-6 p-4 border rounded bg-gray-100">
-            <h2 className="font-semibold mb-2 text-[#234156]">Transfer Payment To:</h2>
+            <h2 className="font-semibold mb-2 text-[#234156]">Transfer Payment (₦{order.totalAmount.toLocaleString()}) To:</h2>
             <p><strong>Bank:</strong> {BANK_NAME}</p>
             <p><strong>Account Number:</strong> {BANK_ACCOUNT_NUMBER}</p>
             <p><strong>Amount:</strong> ₦{order.totalAmount.toLocaleString()}</p>
           </div>
 
           <div className="mb-6 border rounded p-4 bg-gray-50">
-            <h2 className="font-semibold text-[#234156] mb-2">Order Summary</h2>
+           <h2 className="font-semibold text-[#234156] mb-2">
+  {order.billingInfo.name ? `${order.billingInfo.name}'s` : ''} Order Summary
+</h2>
+
             <ul className="space-y-2">
               {order.items.map((item: any, idx: number) => (
                 <li key={idx} className="text-sm">

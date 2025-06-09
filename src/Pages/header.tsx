@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import { motion, MotionConfig } from "framer-motion";
 import { FiHeart, FiShoppingBag, FiShoppingCart } from "react-icons/fi";
 import logo from "../assets/logo.png"
+import MovingText from "./components/movingtext";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
+    <><MovingText/>
     <header className="bg-[#fff]  py-4 px-4 sticky top-0 z-50">
       <div className="max-w-screen-xl mx-auto  flex items-center justify-between">
 
@@ -138,7 +140,7 @@ const Header: React.FC = () => {
           </nav>
         </div>
       )}
-    </header>
+    </header></>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaInstagram, FaEnvelope, FaWhatsapp, FaPhone } from "react-icons/fa";
+import { FaInstagram, FaEnvelope, FaWhatsapp, FaPhone, FaTiktok } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
@@ -72,16 +72,16 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex justify-center space-x-4">
               <a
-                href="mailto:riss"
+                href="https://tiktok.com/crystalvibeluxury"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gray-200 hover:bg-gray-300 p-3 rounded-full text-black text-lg transition"
               >
-                <FaEnvelope />
+                <FaTiktok />
               </a>
 
               <a
-                href="https://instagram.com/"
+                href="https://instagram.com/crystalvibeluxe"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gray-200 hover:bg-gray-300 p-3 rounded-full text-black text-lg transition"
@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
                 <FaInstagram />
               </a>
               <a
-  href="https://wa.me/+234" 
+  href="https://wa.me/+2348131967623" 
   target="_blank"
   rel="noopener noreferrer"
   className="bg-gray-200 hover:bg-gray-300 p-3 rounded-full text-black text-lg transition">
